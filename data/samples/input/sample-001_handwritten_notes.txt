@@ -1,0 +1,31 @@
+[CASE NOTES — partially legible — OCR confidence ~55%]
+
+Johnson v Acme - Pre-trial prep notes
+Date: May 15, 2024 [?]
+
+Key issues to address at trial:
+1) Breach ? contract - main theory - strong
+   Evidence: [scrawl] TechAudit report, emails Jan 2024
+   Witness: [barely legible] Sarah J. + tech expert (name tbd?)
+
+2) Damages calc:
+   Lost payments: ~$1.8M (confirmed)
+   Lost biz opport.: [smudged] $700K?? (need more support)
+   Punitive: prob dismissed (see order Jan 25)
+
+3) Defendant's defenses:
+   - "for cause" termination - WEAK (TechAudit rebuts)
+   - Limitation clause §14 in Agmt - need to argue around
+   - Statute of lim[itations] -- should be ok, filed in time
+
+Depo transcripts needed:
+  - John Doe depo (Feb 28) - KEY - his knowledge of quality issues
+  - Robert Smith depo (Mar 5) - corroborating
+  - TechAudit expert (Apr 3) - confirm findings
+
+[arrow pointing to margin] Check: did we file motion in limine re:
+settlement negotiations? Rule 408 -- YES filed April 20 (Dkt 63)
+
+VERDICT FORM: discuss w/ Priya -- need clear q's on:
+  [illegible line] breach elements
+  [illegible] damages itemized

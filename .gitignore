@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+*.env.local
+.cursor/
+
+# Runtime data (generated on each run — not committed)
+data/index/
+data/processed/
+data/edits/
+data/patterns.sqlite
+data/eval_results.json
+data/simulation_report.json
+
+# Sample outputs ARE committed (show real pipeline results)
+# data/samples/output/ is tracked
+
+*.log
+.DS_Store

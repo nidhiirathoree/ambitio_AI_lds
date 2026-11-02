@@ -1,0 +1,15 @@
+{
+  "cases": [
+    {
+      "caseId": "sample-001",
+      "name": "Johnson v. Acme Corporation",
+      "documents": [
+        "sample-001_clean_complaint.txt",
+        "sample-001_court_order.txt",
+        "sample-001_handwritten_notes.txt",
+        "sample-001_stipulation.txt"
+      ],
+      "description": "Breach of contract and fraud case in NDCA"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+IN THE UNITED STATES DISTRICT COURT
+FOR THE NORTHERN DISTRICT OF CALIFORNIA
+
+SARAH JOHNSON and MICHAEL JOHNSON,
+                    Plaintiffs,
+    vs.
+ACME CORPORATION, a Delaware corporation,
+and JOHN DOE, individually,
+                    Defendants.
+
+Case No. 2024-CV-08472-NCA
+
+COMPLAINT FOR DAMAGES AND INJUNCTIVE RELIEF
+JURY TRIAL DEMANDED
+
+1. This is an action for breach of contract, fraud, and violations of the California Business
+   and Professions Code arising from Defendants' wrongful termination of the Master Service
+   Agreement dated March 15, 2022 ("Agreement").
+
+2. Plaintiffs seek compensatory damages in excess of $2,500,000, punitive damages, and
+   injunctive relief.
+
+PARTIES
+
+3. Plaintiff Sarah Johnson is an individual residing in San Francisco, California.
+4. Plaintiff Michael Johnson is an individual residing in San Francisco, California.
+5. Defendant Acme Corporation is a corporation organized under the laws of Delaware,
+   with its principal place of business at 500 Technology Drive, Palo Alto, California 94301.
+6. Defendant John Doe was the Chief Executive Officer of Acme Corporation.
+
+JURISDICTION
+
+7. Jurisdiction pursuant to 28 U.S.C. § 1332 (diversity; amount exceeds $75,000).
+8. Venue proper in this District pursuant to 28 U.S.C. § 1391(b).
+
+FACTS
+
+9. On March 15, 2022, Plaintiffs and Acme Corporation entered into the Agreement for
+   software development services valued at $3,200,000 over three years.
+
+10. Plaintiffs fully performed all obligations, delivering software modules on time.
+
+11. On January 5, 2024, Defendant John Doe sent a termination notice "for cause," citing
+    alleged deficiencies in deliverable quality.
+
+12. The alleged deficiencies were fabricated. TechAudit LLC confirmed on January 20, 2024
+    that all deliverables met Exhibit A specifications.
+
+13. Plaintiffs suffered damages in excess of $2,500,000.
+
+CAUSES OF ACTION: Breach of Contract; Fraud.
+
+PRAYER FOR RELIEF: Compensatory damages ($2,500,000+); Punitive damages; Injunctive relief;
+Attorneys' fees; Costs.
+
+Dated: February 14, 2024
+By: Priya Patel (Bar No. 287341), Chen & Patel LLP

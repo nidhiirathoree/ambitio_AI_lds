@@ -1,0 +1,204 @@
+{
+  "draftId": "draft_sample-001_aabe1672",
+  "caseId": "sample-001",
+  "draftType": "case_facts",
+  "version": 13,
+  "createdAt": "2026-06-10T10:34:27.316Z",
+  "sections": [
+    {
+      "heading": "Case Overview",
+      "bullets": [
+        {
+          "text": "Case ID: sample-001. Case number(s): RTHERN, 2024-CV-08472-NCA. Document type: Complaint/Petition.",
+          "citations": [
+            {
+              "chunkId": "sample-001_clean_complaint_p1_0b85cebc",
+              "quote": "IN THE UNITED STATES DISTRICT COURT FOR THE NORTHERN DISTRICT OF CALIFORNIA SARAH JOHNSON and MICHAE"
+            }
+          ]
+        },
+        {
+          "text": "Jurisdiction: UNITED STATES DISTRICT COURT; CALIFORNIA SARAH JOHNSON and MICHAEL JOHNSON; DISTRICT COURT; District Court, N.D. Cal. / Judge: Hon. Margaret L. Rivers",
+          "citations": [
+            {
+              "chunkId": "sample-001_clean_complaint_p1_8ef84afc",
+              "quote": "software development services valued at $3,200,000 over three years. 10. Plaintiffs fully performed "
+            }
+          ]
+        },
+        {
+          "text": "Filing court: United States District Court, Northern District of California (learned from operator edits)",
+          "citations": []
+        }
+      ]
+    },
+    {
+      "heading": "Parties",
+      "bullets": [
+        {
+          "text": "vs",
+          "citations": [
+            {
+              "chunkId": "sample-001_clean_complaint_p1_0b85cebc",
+              "quote": "IN THE UNITED STATES DISTRICT COURT FOR THE NORTHERN DISTRICT OF CALIFORNIA SARAH JOHNSON and MICHAE"
+            }
+          ]
+        },
+        {
+          "text": "seek compensatory damages in excess of $2",
+          "citations": [
+            {
+              "chunkId": "sample-001_clean_complaint_p1_8ef84afc",
+              "quote": "software development services valued at $3,200,000 over three years. 10. Plaintiffs fully performed "
+            }
+          ]
+        },
+        {
+          "text": "Sarah Johnson is an individual residing in San Francisco",
+          "citations": [
+            {
+              "chunkId": "sample-001_court_order_p1_01e2e34d",
+              "quote": "C0URT 0RDER — MOTTON FOR SUMMARY JUDGMENT CASE NO: 2024-CV-O8472-NCA [handwritten note: received Jan"
+            }
+          ]
+        },
+        {
+          "text": "Michael Johnson is an individual residing in San Francisco",
+          "citations": [
+            {
+              "chunkId": "sample-001_stipulation_p1_6ca9594c",
+              "quote": "STIPULATION AND [PROPOSED] ORDER RE: DISCOVERY SCHEDULE Case: Johnson et al. v. Acme Corporation, 20"
+            }
+          ]
+        },
+        {
+          "text": "Plaintiff's counsel: Priya Patel, Chen & Patel LLP (learned from operator edits)",
+          "citations": []
+        }
+      ]
+    },
+    {
+      "heading": "Key Dates and Chronology",
+      "bullets": [
+        {
+          "text": "Event on March",
+          "citations": [
+            {
+              "chunkId": "sample-001_stipulation_p1_6ca9594c",
+              "quote": "STIPULATION AND [PROPOSED] ORDER RE: DISCOVERY SCHEDULE Case: Johnson et al. v. Acme Corporation, 20"
+            }
+          ]
+        },
+        {
+          "text": "Event on January",
+          "citations": [
+            {
+              "chunkId": "sample-001_handwritten_notes_p1_5570404e",
+              "quote": "[CASE NOTES — partially legible — OCR confidence ~55%] Johnson v Acme - Pre-trial prep notes Date: M"
+            }
+          ]
+        },
+        {
+          "text": "Event on February",
+          "citations": [
+            {
+              "chunkId": "sample-001_court_order_p1_67dd9a2e",
+              "quote": "3. Trial: JUNE 16, 2024 at 9:O0 AM, Courtroom 12. Pre-trial conference: MAY 28, 2O24 at 2:OO PM. 4. "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Facts Alleged / Established",
+      "bullets": [
+        {
+          "text": "IN THE UNITED STATES DISTRICT COURT FOR THE NORTHERN DISTRICT OF CALIFORNIA SARAH JOHNSON and MICHAEL JOHNSON, Plaintiffs, vs. ACME CORPORATION, a Delaware corporation, and JOHN DOE, individually, Def...",
+          "citations": [
+            {
+              "chunkId": "sample-001_clean_complaint_p1_0b85cebc",
+              "quote": "IN THE UNITED STATES DISTRICT COURT FOR THE NORTHERN DISTRICT OF CALIFORNIA SARA"
+            }
+          ]
+        },
+        {
+          "text": "software development services valued at $3,200,000 over three years. 10. Plaintiffs fully performed all obligations, delivering software modules on time. 11. On January 5, 2024, Defendant John Doe sen...",
+          "citations": [
+            {
+              "chunkId": "sample-001_clean_complaint_p1_8ef84afc",
+              "quote": "software development services valued at $3,200,000 over three years. 10. Plainti"
+            }
+          ]
+        },
+        {
+          "text": "C0URT 0RDER — MOTTON FOR SUMMARY JUDGMENT CASE NO: 2024-CV-O8472-NCA [handwritten note: received Jan 30 2024] IN THE MATTER OF: J0HNSON v. ACME C0RPORATION DATE OF HEARING: January 25, 2O24 [O = zero ...",
+          "citations": [
+            {
+              "chunkId": "sample-001_court_order_p1_01e2e34d",
+              "quote": "C0URT 0RDER — MOTTON FOR SUMMARY JUDGMENT CASE NO: 2024-CV-O8472-NCA [handwritte"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Procedural History",
+      "bullets": [
+        {
+          "text": "STIPULATION AND [PROPOSED] ORDER RE: DISCOVERY SCHEDULE Case: Johnson et al. v. Acme Corporation, 2024-CV-08472 Court: U.S. District Court, N.D. Cal. / Judge: Hon. Margaret L. Rivers STIPULATED SCHEDU...",
+          "citations": [
+            {
+              "chunkId": "sample-001_stipulation_p1_6ca9594c",
+              "quote": "STIPULATION AND [PROPOSED] ORDER RE: DISCOVERY SCHEDULE Case: Johnson et al. v. "
+            }
+          ]
+        },
+        {
+          "text": "[CASE NOTES — partially legible — OCR confidence ~55%] Johnson v Acme - Pre-trial prep notes Date: May 15, 2024 [?] Key issues to address at trial: 1) Breach ? contract - main theory - strong Evidence...",
+          "citations": [
+            {
+              "chunkId": "sample-001_handwritten_notes_p1_5570404e",
+              "quote": "[CASE NOTES — partially legible — OCR confidence ~55%] Johnson v Acme - Pre-tria"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Relief Sought / Outcomes",
+      "bullets": [
+        {
+          "text": "Not stated in documents",
+          "citations": []
+        }
+      ]
+    },
+    {
+      "heading": "Open Questions / Gaps in Record",
+      "bullets": [
+        {
+          "text": "Document generated in mock mode — LLM not available for full analysis",
+          "citations": []
+        },
+        {
+          "text": "Set LLM_PROVIDER and LLM_API_KEY in .env for complete AI-generated draft",
+          "citations": []
+        }
+      ]
+    }
+  ],
+  "unsupportedClaims": [
+    "Section \"Case Overview\": Bullet \"Filing court: United States District Court, Northern District of California (lea...\" has no citations",
+    "Section \"Parties\": Bullet \"Plaintiff's counsel: Priya Patel, Chen & Patel LLP (learned from operator edits)...\" has no citations",
+    "Section \"Open Questions / Gaps in Record\": Bullet \"Document generated in mock mode — LLM not available for full analysis...\" has no citations",
+    "Section \"Open Questions / Gaps in Record\": Bullet \"Set LLM_PROVIDER and LLM_API_KEY in .env for complete AI-generated draft...\" has no citations"
+  ],
+  "retrievedChunks": [
+    "sample-001_clean_complaint_p1_0b85cebc",
+    "sample-001_clean_complaint_p1_8ef84afc",
+    "sample-001_court_order_p1_01e2e34d",
+    "sample-001_stipulation_p1_6ca9594c",
+    "sample-001_handwritten_notes_p1_5570404e",
+    "sample-001_court_order_p1_67dd9a2e"
+  ]
+}

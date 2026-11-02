@@ -1,0 +1,40 @@
+     C0URT 0RDER — MOTTON FOR SUMMARY JUDGMENT
+
+CASE NO: 2024-CV-O8472-NCA [handwritten note: received Jan 30 2024]
+
+IN THE MATTER OF: J0HNSON v. ACME C0RPORATION
+
+DATE OF HEARING: January 25, 2O24 [O = zero in original scan]
+PRESIDING: Hon. MARGARET L. RIVERS, U.S. District Judge
+
+PRESENT:
+  - Prlya Patel (Att0rney for Plaintiff, Chen & Patel LLP) [smudge]
+  - David Ng, Esq. (Attorney for Def. Acme Corp) [torn edge]
+  - Robert Sm1th (in-house counsel, Acme) [1 = i typo from scan]
+
+THE COURT: Having considered Defendant's Motion for Summary Judgment
+filed December 12, 2O23, Plaintiffs Opposition filed January 3, 2O24,
+the Court hereby ORDERS as follows:
+
+  1. Defendant's Motion for Summary Judgment is DENIED IN PART and
+     GRANTED IN PART as follows:
+     a. DENIED as to Plaintiffs' breach of contract claims (Count l)
+        [l = I = Roman numeral - scan artifact]
+     b. DENIED as to Plaintiffs' fraud claims (Count ll)
+     c. GRANTED as to Plaintiffs' punitive damages claim to the extent
+        it relies solely on the breach of contract theory
+
+  2. The Court finds genuine issues of material fact exist regarding:
+     - Whether Defendants had valid cause for termination under § 12.3
+     - Whether the January 5, 2024 termination notice was proper
+       [marginal note: "see TechAudit report"]
+
+  3. Trial: JUNE 16, 2024 at 9:O0 AM, Courtroom 12.
+     Pre-trial conference: MAY 28, 2O24 at 2:OO PM.
+
+  4. Discovery cutoff extended to APRIL 15, 2O24 [handwritten: per stipulation 1/27/24]
+  5. Defendant shall file revised privilege log by FEBRUARY 28, 2024.
+
+IT IS SO ORDERED. /s/ Margaret L. Rivers, U.S. District Judge
+Dated: January 25, 2024 [Dkt. No. 47]
+[PAGE QUALITY: Poor — recommend re-scan pages 3-4 if available]

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambitio Legal Drafts — Case Fact Summary Review</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+    header { background: #1a365d; color: white; padding: 16px 32px; display: flex; align-items: center; gap: 16px; }
+    header h1 { font-size: 20px; font-weight: 600; }
+    header span { font-size: 13px; opacity: 0.7; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+    .sidebar { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); height: fit-content; }
+    .sidebar h2 { font-size: 14px; font-weight: 600; color: #666; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .case-list { list-style: none; }
+    .case-item { padding: 10px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; margin-bottom: 4px; border: 1px solid transparent; }
+    .case-item:hover { background: #f0f4ff; border-color: #c7d2fe; }
+    .case-item.active { background: #e0e7ff; border-color: #818cf8; color: #3730a3; font-weight: 500; }
+    .main { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .draft-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+    .draft-title { font-size: 20px; font-weight: 600; color: #1a365d; }
+    .draft-meta { font-size: 12px; color: #6b7280; margin-top: 4px; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 500; }
+    .badge-v1 { background: #fef3c7; color: #92400e; }
+    .badge-v2 { background: #d1fae5; color: #065f46; }
+    .badge-warn { background: #fee2e2; color: #991b1b; }
+    .section { margin-bottom: 28px; }
+    .section-heading { font-size: 15px; font-weight: 600; color: #1f2937; margin-bottom: 10px; padding: 8px 12px; background: #f9fafb; border-radius: 6px; border-left: 3px solid #6366f1; }
+    .bullet { display: flex; gap: 8px; margin-bottom: 8px; padding: 8px 12px; border-radius: 6px; transition: background 0.15s; }
+    .bullet:hover { background: #f9fafb; }
+    .bullet-dot { color: #6366f1; font-weight: bold; flex-shrink: 0; margin-top: 2px; }
+    .bullet-text { font-size: 14px; line-height: 1.5; flex: 1; }
+    .citations { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+    .citation-tag { font-size: 11px; background: #ede9fe; color: #5b21b6; padding: 2px 6px; border-radius: 4px; cursor: pointer; }
+    .citation-tag:hover { background: #c4b5fd; }
+    .edit-section { margin-top: 8px; }
+    .edit-area { width: 100%; min-height: 120px; font-family: inherit; font-size: 13px; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; resize: vertical; line-height: 1.5; }
+    .edit-area:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+    .btn { padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.15s; }
+    .btn-primary { background: #4f46e5; color: white; }
+    .btn-primary:hover { background: #4338ca; }
+    .btn-secondary { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+    .btn-secondary:hover { background: #e5e7eb; }
+    .btn-danger { background: #fee2e2; color: #dc2626; }
+    .actions { display: flex; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+    .unsupported { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px; padding: 12px 16px; margin-top: 20px; }
+    .unsupported h3 { font-size: 13px; font-weight: 600; color: #c2410c; margin-bottom: 8px; }
+    .unsupported li { font-size: 12px; color: #78350f; margin-left: 16px; margin-bottom: 4px; }
+    .patterns-panel { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 12px 16px; margin-top: 20px; }
+    .patterns-panel h3 { font-size: 13px; font-weight: 600; color: #166534; margin-bottom: 8px; }
+    .pattern-item { font-size: 12px; color: #14532d; margin-bottom: 4px; padding: 4px 8px; background: white; border-radius: 4px; border-left: 2px solid #22c55e; }
+    .loading { text-align: center; padding: 40px; color: #6b7280; }
+    .error { background: #fee2e2; color: #dc2626; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; }
+    .success { background: #d1fae5; color: #065f46; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; }
+    .tabs { display: flex; gap: 1px; background: #e5e7eb; border-radius: 8px; padding: 2px; margin-bottom: 20px; }
+    .tab { flex: 1; padding: 8px; text-align: center; font-size: 13px; font-weight: 500; cursor: pointer; border-radius: 6px; color: #6b7280; }
+    .tab.active { background: white; color: #4f46e5; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .empty { text-align: center; padding: 60px 20px; color: #9ca3af; }
+    .empty h3 { font-size: 16px; margin-bottom: 8px; color: #6b7280; }
+    .evidence-item { font-size: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .evidence-item .chunk-id { font-family: monospace; color: #6366f1; font-size: 11px; }
+    .evidence-item .quote { color: #4b5563; margin-top: 4px; font-style: italic; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Ambitio Legal Drafts</h1>
+      <span>Case Fact Summary — Operator Review Interface</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <!-- Sidebar: Case List -->
+      <aside class="sidebar">
+        <h2>Cases</h2>
+        <ul class="case-list" id="caseList">
+          <li class="case-item" style="color:#9ca3af;">Loading...</li>
+        </ul>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid #e5e7eb;">
+          <h2 style="margin-bottom:8px;">Actions</h2>
+          <button class="btn btn-secondary" style="width:100%;margin-bottom:8px;" onclick="generateDraft()">
+            ▶ Generate Draft
+          </button>
+          <button class="btn btn-secondary" style="width:100%;" onclick="showPatterns()">
+            🧠 View Patterns
+          </button>
+        </div>
+        <div id="caseInput" style="margin-top:12px;">
+          <input id="caseIdInput" placeholder="Case ID (e.g. sample-001)" style="width:100%;padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
+        </div>
+      </aside>
+
+      <!-- Main Panel -->
+      <main class="main">
+        <div id="emptyState" class="empty">
+          <h3>Select a case to view drafts</h3>
+          <p>Or generate a new draft using the button on the left</p>
+        </div>
+
+        <div id="draftPanel" style="display:none;">
+          <div class="draft-header">
+            <div>
+              <div class="draft-title" id="draftTitle">Case Fact Summary</div>
+              <div class="draft-meta" id="draftMeta"></div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;" id="versionBadges"></div>
+          </div>
+
+          <div class="tabs">
+            <div class="tab active" onclick="switchTab('review')">📋 Review & Edit</div>
+            <div class="tab" onclick="switchTab('evidence')">🔍 Evidence</div>
+            <div class="tab" onclick="switchTab('patterns')">🧠 Patterns</div>
+          </div>
+
+          <div id="notification"></div>
+
+          <!-- Review Tab -->
+          <div id="tab-review">
+            <div id="sectionsContainer"></div>
+            <div id="unsupportedWarning"></div>
+            <div class="actions">
+              <button class="btn btn-primary" onclick="submitEdit()">💾 Save Edit & Learn</button>
+              <button class="btn btn-secondary" onclick="regenerateDraft()">↻ Regenerate Draft</button>
+              <button class="btn btn-secondary" onclick="downloadDraft()">⬇ Download MD</button>
+            </div>
+          </div>
+
+          <!-- Evidence Tab -->
+          <div id="tab-evidence" style="display:none;">
+            <div id="evidenceContainer"></div>
+          </div>
+
+          <!-- Patterns Tab -->
+          <div id="tab-patterns" style="display:none;">
+            <div id="patternsContainer"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const API = '';
+    let currentCase = null;
+    let currentDraft = null;
+    let currentTab = 'review';
+
+    async function api(path, opts = {}) {
+      const res = await fetch(API + path, opts);
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    }
+
+    async function loadCases() {
+      try {
+        const data = await api('/cases');
+        const list = document.getElementById('caseList');
+        if (!data.cases || data.cases.length === 0) {
+          list.innerHTML = '<li style="color:#9ca3af;font-size:13px;padding:8px;">No cases found. Run npm run ingest first.</li>';
+          return;
+        }
+        list.innerHTML = data.cases.map(c =>
+          `<li class="case-item" onclick="selectCase('${c}')">${c}</li>`
+        ).join('');
+      } catch (e) {
+        document.getElementById('caseList').innerHTML = '<li style="color:#dc2626;font-size:12px;padding:8px;">API not available. Start server: npm run serve</li>';
+      }
+    }
+
+    async function selectCase(caseId) {
+      currentCase = caseId;
+      document.querySelectorAll('.case-item').forEach(el => el.classList.remove('active'));
+      event?.target?.classList.add('active');
+      document.getElementById('caseIdInput').value = caseId;
+      await loadLatestDraft(caseId);
+    }
+
+    async function loadLatestDraft(caseId) {
+      try {
+        showNotification('Loading...', 'info');
+        const data = await api(`/cases/${caseId}/drafts`);
+        if (!data.drafts || data.drafts.length === 0) {
+          showEmpty(`No drafts for case "${caseId}". Click Generate Draft.`);
+          return;
+        }
+        const latest = data.drafts.sort((a, b) => b.version - a.version)[0];
+        await loadDraft(caseId, latest.draftId);
+      } catch (e) {
+        showError('Failed to load drafts: ' + e.message);
+      }
+    }
+
+    async function loadDraft(caseId, draftId) {
+      try {
+        const draft = await api(`/cases/${caseId}/draft/${draftId}`);
+        currentDraft = draft;
+        renderDraft(draft);
+        clearNotification();
+      } catch (e) {
+        showError('Failed to load draft: ' + e.message);
+      }
+    }
+
+    function renderDraft(draft) {
+      document.getElementById('emptyState').style.display = 'none';
+      document.getElementById('draftPanel').style.display = 'block';
+      document.getElementById('draftTitle').textContent = `Case Fact Summary: ${draft.caseId}`;
+      document.getElementById('draftMeta').textContent = `Draft ID: ${draft.draftId} | ${new Date(draft.createdAt).toLocaleString()}`;
+
+      const badges = document.getElementById('versionBadges');
+      badges.innerHTML = `<span class="badge badge-v${draft.version <= 1 ? '1' : '2'}">v${draft.version}</span>`;
+      if (draft.unsupportedClaims?.length > 0) {
+        badges.innerHTML += `<span class="badge badge-warn">⚠ ${draft.unsupportedClaims.length} unsupported</span>`;
+      }
+
+      renderSections(draft);
+      renderUnsupported(draft);
+    }
+
+    function renderSections(draft) {
+      const container = document.getElementById('sectionsContainer');
+      container.innerHTML = draft.sections.map(section => `
+        <div class="section">
+          <div class="section-heading">${section.heading}</div>
+          ${section.bullets.map(bullet => `
+            <div class="bullet">
+              <span class="bullet-dot">•</span>
+              <div class="bullet-text">
+                ${escHtml(bullet.text)}
+                ${bullet.citations.length > 0 ? `
+                  <div class="citations">
+                    ${bullet.citations.map(c => `<span class="citation-tag" title="${escHtml(c.quote)}">[${c.chunkId.slice(-8)}]</span>`).join('')}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          `).join('')}
+          <div class="edit-section">
+            <textarea class="edit-area" id="edit-${section.heading}" placeholder="Edit this section... (your edits will train the AI)">${section.bullets.map(b => '- ' + b.text).join('\n')}</textarea>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderUnsupported(draft) {
+      const el = document.getElementById('unsupportedWarning');
+      if (!draft.unsupportedClaims || draft.unsupportedClaims.length === 0) {
+        el.innerHTML = '';
+        return;
+      }
+      el.innerHTML = `
+        <div class="unsupported">
+          <h3>⚠ Unsupported Claims (${draft.unsupportedClaims.length})</h3>
+          <ul>${draft.unsupportedClaims.map(c => `<li>${escHtml(c)}</li>`).join('')}</ul>
+        </div>
+      `;
+    }
+
+    async function submitEdit() {
+      if (!currentDraft) return;
+      const editedSections = {};
+      for (const section of currentDraft.sections) {
+        const textarea = document.getElementById('edit-' + section.heading);
+        if (textarea) editedSections[section.heading] = textarea.value;
+      }
+
+      try {
+        showNotification('Saving edit and updating learning patterns...', 'info');
+        const result = await api(`/cases/${currentDraft.caseId}/draft/${currentDraft.draftId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ editedSections }),
+        });
+        showNotification(`✓ Edit saved! ${result.patternsSummary}`, 'success');
+      } catch (e) {
+        showError('Failed to save edit: ' + e.message);
+      }
+    }
+
+    async function generateDraft() {
+      const caseId = document.getElementById('caseIdInput').value.trim();
+      if (!caseId) { showError('Enter a Case ID first'); return; }
+
+      try {
+        showNotification('Generating draft...', 'info');
+        const result = await api(`/cases/${caseId}/draft`, { method: 'POST' });
+        showNotification(`✓ Draft ${result.draftId} generated (v${result.version})`, 'success');
+        currentCase = caseId;
+        await loadLatestDraft(caseId);
+        await loadCases();
+      } catch (e) {
+        showError('Failed to generate draft: ' + e.message);
+      }
+    }
+
+    async function regenerateDraft() {
+      if (!currentCase) return;
+      document.getElementById('caseIdInput').value = currentCase;
+      await generateDraft();
+    }
+
+    async function loadEvidence() {
+      if (!currentDraft) return;
+      try {
+        const data = await api(`/cases/${currentDraft.caseId}/draft/${currentDraft.draftId}/evidence`);
+        const container = document.getElementById('evidenceContainer');
+        if (!data.evidence || data.evidence.length === 0) {
+          container.innerHTML = '<div class="empty"><h3>No evidence mappings found</h3></div>';
+          return;
+        }
+        container.innerHTML = `
+          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">${data.evidence.length} evidence citations across all sections</p>
+          ${data.evidence.map(e => `
+            <div class="evidence-item">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <strong style="font-size:12px;">${escHtml(e.section)}</strong>
+                <span class="chunk-id">${e.chunkId}</span>
+              </div>
+              <div style="font-size:12px;color:#374151;margin-top:4px;">${escHtml(e.bulletText)}...</div>
+              <div class="quote">"${escHtml((e.quote || '').slice(0, 120))}..."</div>
+              <div style="margin-top:4px;font-size:11px;color:#9ca3af;">doc: ${e.docId} · page: ${e.pageNumber}</div>
+            </div>
+          `).join('')}
+        `;
+      } catch (e) {
+        document.getElementById('evidenceContainer').innerHTML = `<div class="error">${e.message}</div>`;
+      }
+    }
+
+    async function showPatterns() {
+      switchTab('patterns');
+      await loadPatterns();
+    }
+
+    async function loadPatterns() {
+      try {
+        const data = await api('/patterns');
+        const container = document.getElementById('patternsContainer');
+        if (!data.patterns || data.patterns.length === 0) {
+          container.innerHTML = '<div class="empty"><h3>No patterns learned yet</h3><p>Submit edits to train the AI</p></div>';
+          return;
+        }
+        container.innerHTML = `
+          <div class="patterns-panel">
+            <h3>🧠 ${data.stats.total} Learned Patterns (${JSON.stringify(data.stats.byType)})</h3>
+          </div>
+          <div style="margin-top:12px;">
+            ${data.patterns.map(p => `
+              <div class="pattern-item">
+                <strong>[${p.type}]</strong> (${p.count}x) ${escHtml(p.instruction)}
+                ${p.examples[0] ? `<div style="margin-top:2px;color:#6b7280;">Ex: "${escHtml(p.examples[0].original)}" → "${escHtml(p.examples[0].edited)}"</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } catch (e) {
+        document.getElementById('patternsContainer').innerHTML = `<div class="error">${e.message}</div>`;
+      }
+    }
+
+    function switchTab(tab) {
+      currentTab = tab;
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab')[['review', 'evidence', 'patterns'].indexOf(tab)]?.classList.add('active');
+      ['review', 'evidence', 'patterns'].forEach(t => {
+        document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none';
+      });
+      if (tab === 'evidence') loadEvidence();
+      if (tab === 'patterns') loadPatterns();
+    }
+
+    function downloadDraft() {
+      if (!currentDraft) return;
+      const lines = [`# Case Fact Summary: ${currentDraft.caseId}\n`];
+      for (const section of currentDraft.sections) {
+        lines.push(`## ${section.heading}`);
+        const textarea = document.getElementById('edit-' + section.heading);
+        lines.push(textarea ? textarea.value : section.bullets.map(b => '- ' + b.text).join('\n'));
+        lines.push('');
+      }
+      const blob = new Blob([lines.join('\n')], { type: 'text/markdown' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${currentDraft.caseId}_draft_v${currentDraft.version}.md`;
+      a.click();
+    }
+
+    function showEmpty(msg) {
+      document.getElementById('emptyState').style.display = 'block';
+      document.getElementById('draftPanel').style.display = 'none';
+      document.querySelector('#emptyState h3').textContent = msg || 'Select a case';
+    }
+
+    function showNotification(msg, type) {
+      const el = document.getElementById('notification');
+      el.innerHTML = `<div class="${type === 'error' ? 'error' : 'success'}">${escHtml(msg)}</div>`;
+    }
+
+    function showError(msg) { showNotification(msg, 'error'); }
+    function clearNotification() { document.getElementById('notification').innerHTML = ''; }
+    function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    // Init
+    loadCases();
+  </script>
+</body>
+</html>

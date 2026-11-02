@@ -1,0 +1,46 @@
+{
+  "docId": "sample-001_clean_complaint",
+  "sourcePath": "data/samples/input/sample-001_clean_complaint.txt",
+  "caseId": "sample-001",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "rawText": "IN THE UNITED STATES DISTRICT COURT\nFOR THE NORTHERN DISTRICT OF CALIFORNIA\n\nSARAH JOHNSON and MICHAEL JOHNSON, Plaintiffs,\n    vs.\nACME CORPORATION, a Delaware corporation, and JOHN DOE, individually, Defendants.\n\nCase No. 2024-CV-08472-NCA\n\nCOMPLAINT FOR DAMAGES AND INJUNCTIVE RELIEF\n\n...[full text extracted natively]",
+      "confidence": null,
+      "unclearSpans": null
+    }
+  ],
+  "structured": {
+    "parties": [
+      "Sarah Johnson",
+      "Michael Johnson",
+      "Acme Corporation",
+      "John Doe"
+    ],
+    "dates": [
+      "March 15, 2022",
+      "January 5, 2024",
+      "January 20, 2024",
+      "February 14, 2024"
+    ],
+    "caseNumbers": [
+      "2024-CV-08472-NCA"
+    ],
+    "jurisdictions": [
+      "United States District Court for the Northern District of California"
+    ],
+    "documentType": "Complaint/Petition",
+    "keyEntities": [
+      "ACME CORPORATION",
+      "SARAH JOHNSON",
+      "MICHAEL JOHNSON",
+      "JOHN DOE",
+      "TechAudit LLC",
+      "Chen & Patel LLP"
+    ]
+  },
+  "extractionMeta": {
+    "method": "native",
+    "warnings": []
+  }
+}

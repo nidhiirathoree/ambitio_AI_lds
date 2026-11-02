@@ -1,0 +1,54 @@
+{
+  "docId": "sample-001_court_order",
+  "sourcePath": "data/samples/input/sample-001_court_order.txt",
+  "caseId": "sample-001",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "rawText": "C0URT 0RDER — MOTTON FOR SUMMARY JUDGMENT\n\nCASE NO: 2024-CV-O8472-NCA [handwritten note: received Jan 30 2024]\nIN THE MATTER OF: J0HNSON v. ACME C0RPORATION\n\n...[OCR output with scan artifacts preserved — confidence 72%]",
+      "confidence": 72.4,
+      "unclearSpans": [
+        { "start": 0, "end": 14, "reason": "Low OCR confidence: 58.2% — possible scan artifact (0 vs O substitutions)" },
+        { "start": 102, "end": 120, "reason": "Low OCR confidence: 61.0% — marginal annotation unclear" }
+      ]
+    }
+  ],
+  "structured": {
+    "parties": [
+      "Johnson",
+      "Acme Corporation",
+      "Priya Patel",
+      "David Ng",
+      "Robert Smith"
+    ],
+    "dates": [
+      "January 25, 2024",
+      "June 16, 2024",
+      "May 28, 2024",
+      "April 15, 2024",
+      "February 28, 2024"
+    ],
+    "caseNumbers": [
+      "2024-CV-O8472-NCA"
+    ],
+    "jurisdictions": [
+      "United States District Court, Northern District of California"
+    ],
+    "documentType": "Court Order",
+    "keyEntities": [
+      "MARGARET L. RIVERS",
+      "JOHNSON",
+      "ACME",
+      "CORPORATION",
+      "TechAudit"
+    ]
+  },
+  "extractionMeta": {
+    "method": "ocr",
+    "warnings": [
+      "Simulated OCR: document contains scan artifacts (0/O substitutions, marginal annotations)",
+      "Low OCR confidence on page 1 (72.4%) — review unclear spans before use",
+      "Handwritten annotations detected — may affect extraction accuracy"
+    ]
+  }
+}

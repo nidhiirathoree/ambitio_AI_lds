@@ -1,0 +1,15 @@
+{
+  "/api/patterns/route": "app/api/patterns/route.js",
+  "/api/documents/route": "app/api/documents/route.js",
+  "/api/drafts/route": "app/api/drafts/route.js",
+  "/api/edits/route": "app/api/edits/route.js",
+  "/api/eval/route": "app/api/eval/route.js",
+  "/page": "app/page.js",
+  "/documents/page": "app/documents/page.js",
+  "/drafts/page": "app/drafts/page.js",
+  "/retrieval/page": "app/retrieval/page.js",
+  "/learning/page": "app/learning/page.js",
+  "/review/page": "app/review/page.js",
+  "/evaluation/page": "app/evaluation/page.js",
+  "/architecture/page": "app/architecture/page.js"
+}
